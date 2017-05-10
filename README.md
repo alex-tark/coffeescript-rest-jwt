@@ -15,13 +15,25 @@ If you would like to use another version of CoffeScript/npm/Node,js you can chan
 There are a simple files tree:
 
     .
-    ├── build                   # Compiled files (alternatively `dist`)
-    ├── docs                    # Documentation files (alternatively `doc`)
-    ├── src                     # Source files (alternatively `lib` or `app`)
-    ├── test                    # Automated tests (alternatively `spec` or `tests`)
-    ├── tools                   # Tools and utilities
-    ├── LICENSE
-    └── README.md
+    ├── bin                                 # Directory with main server .coffee files
+    ├── services                            # API controllers 
+        ├── auth                            
+            ├── index.coffee                # Expess.Router with all '/auth' routes
+            └── controllers
+                └── AuthController.coffee
+        ├── models                          # All API db mongoose models
+            ├── AuthToken.coffee            
+            ├── ClientAuth.coffee
+            └── User.coffee
+        ├── CheckAuth.coffee                # Method of checking is user has authentithicated
+        └── index.coffee                    # Returns all service routes
+    ├── helpers                             # Helpers classes and methods
+        └── error
+            └── Error.coffe
+    ├── app.coffee                          # The main application settings
+    └── package.json
+    
+To extand this API by new controllers you just have to create new folder in `services` directory and add it to the `services/index.coffee` file. The same situation with `helpers`.
     
 ## OAuth strategy
 We have 3 mongoose models using in authentithication:
