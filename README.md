@@ -67,5 +67,23 @@ Authentithication route to controll the auth service.
   - GET request '/auth/signout' - to send: `Header: 'x-auth' = 'your access_token'`. Just deleting your `'access_token'` in DB storage.
   - GET request '/auth' - to send: `Header: 'x-auth' = 'your access_token'`. Returns you your `'access_token'`
   
+## Response JSON example
+Server send to you JSON like that:
+```coffeescript
+{
+    status: true,                   # Request status
+    data: [],                       # Response data
+    message: "Some message here"    # Message to add it in your logs
+}
+```
+If you would send POST request by `<form ...>...</form>` and got some errors - server will include special row `field`.
+```coffeescript
+{
+    ...
+    field: "password"               
+    ...
+}
+```
+It shows which form field has error now.
 ## Examples
 Heroku: https://dashboard.heroku.com
