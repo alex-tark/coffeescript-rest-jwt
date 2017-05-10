@@ -2,10 +2,11 @@ mongoose = require 'mongoose'
 bcrypt = require 'bcrypt-nodejs'
 
 UserSchema = new mongoose.Schema(
-  username: { type: String, required: true, default: "undefined", unique: true }
-  password: { type: String, required: true, default: "password" }
-  email: { type: String, required: true, default: "admin@Admin.com" }
-  signin_at: { type: Date, default: Date.now }
+	name:	   { type: String, required: true, default: "undefined" }
+	username:  { type: String, required: true, default: "undefined", unique: true }
+	password:  { type: String, required: true, default: "password" }
+	email: 	   { type: String, required: true, default: "admin@Admin.com" }
+	signin_at: { type: Date, default: Date.now }
 )
 
 UserSchema.pre 'save', (callback) ->

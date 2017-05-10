@@ -1,4 +1,3 @@
-# NPM модули
 express      = require 'express'
 mongoose	 = require 'mongoose'
 path         = require 'path'
@@ -8,9 +7,9 @@ bodyParser   = require 'body-parser'
 
 app = express()
 
-# Конфигурация приложения
+# Application configuration
 app.set "port", process.env.PORT or 3000
-app.set 'storage-uri', 'mongodb://<user>:<password>@ds017852.mlab.com:17852/auc'
+app.set 'storage-uri', 'mongodb://admin:defender@ds017852.mlab.com:17852/auc'
 
 app.use logger('dev')
 app.use bodyParser.json()
@@ -24,12 +23,12 @@ app.use (req, res, next) ->
 	res.header 'Access-Control-Allow-Credentials', true
 	next()
 	
-# Подключение к базе данных
+# Connect to Mongo
 mongoose.connect app.get('storage-uri'), { db: { safe: true }}, (err) ->
   console.log "Mongoose - connection error: " + err if err?
   console.log "Mongoose - connection OK"
 
-# Роуты приложения и сиды
+# App routes and settings
 app.use '/', require './services/index'
 
 app.use (req, res, next) ->
