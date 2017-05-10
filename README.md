@@ -67,3 +67,5 @@ Authentithication route to controll the auth service.
   - GET request '/auth/signout' - to send: `Header: 'x-auth' = 'your access_token'`. Just deleting your `'access_token'` in DB storage.
   - GET request '/auth' - to send: `Header: 'x-auth' = 'your access_token'`. Returns you your `'access_token'`
   
+## Examples
+Heroku: https://dashboard.heroku.com
