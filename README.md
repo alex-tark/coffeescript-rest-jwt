@@ -9,7 +9,7 @@ $ cd coffeescript-rest-jwt/
 $ npm install
 $ npm start
 ```
-If you would like to use another version of CoffeScript/npm/Node,js you can change it in your package.json file.
+If you would like to use another version of CoffeScript/npm/Node.js you can change it in your package.json file.
 
 ## API directory structure
 There are a simple files tree:
@@ -86,4 +86,4 @@ If you would send POST request by `<form ...>...</form>` and got some errors - s
 ```
 It shows which form field has error now.
 ## Examples
-Heroku: https://dashboard.heroku.com
+Heroku: https://api-projmanager.herokuapp.com
