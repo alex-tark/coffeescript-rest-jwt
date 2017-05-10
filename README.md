@@ -1,5 +1,5 @@
 ## About 
-Coffescript REST API example using JWT and OAuth strategy based on Node.js/MongoDB.
+Coffescript REST API example using JWT and OAuth strategy based on Node.js/MongoDB and Express.js/Mongoose.
 
 ## Get started
 To start just use this code in your terminal:
