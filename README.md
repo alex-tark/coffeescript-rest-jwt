@@ -51,7 +51,7 @@ We have 3 mongoose models using in authentithication:
     - access_token: `{ type: String, required: true }`
     - client:	 	    `{ type: String, required: true }`
 
-Registered user would have 2 documents in collections User and Client, after sign in he takes a Token document. If you would like to access closed area you have to send 'x-auth' header. API would check if Client/Token models exist. To sign out just send GET request and Token model (equals your req.headers['x-auth'] token) would be removed.
+Registered user would have 2 documents in collections User and Client, after sign in he takes a Token document. If you would like to access closed area you have to send 'x-auth' header. API would check if Client/Token models exist then he will compare `Client.client_secret field` with `access_token`. To sign out just send GET request and Token model (equals your req.headers['x-auth'] token) would be removed.
 
 ## Routes
 This example enjoy some simple routes.
